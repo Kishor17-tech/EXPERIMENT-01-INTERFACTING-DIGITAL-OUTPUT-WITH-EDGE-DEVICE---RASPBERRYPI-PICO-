@@ -1,20 +1,20 @@
 # EXPERIMENT-01-INTERFACTING-DIGITAL-OUTPUT-WITH-EDGE-DEVICE---(RASPBERRYPI-PICO)
-### NAME 
-### DEPARTMENT 
-### ROLL NO 
-### DATE OF EXPERIMENT 
+### NAME K R KISHOR
+### DEPARTMENT CSE(IOT)
+### ROLL NO 212224110032
+### DATE OF EXPERIMENT 24/05/2025
 
 ### AIM
 To interface a digital output device (LED) with the Raspberry Pi Pico and control it using MicroPython.
 
-## APPARATUS REQUIRED
+## APPARATUS REQUIRED:
 Raspberry Pi Pico
 LED (Light Emitting Diode)
 330Ω Resistor
 Breadboard
 Jumper Wires
 USB Cable
- ## THEORY
+ ## THEORY:
 
  ![image](https://github.com/user-attachments/assets/abeabf63-f321-471e-a991-3adaa9043a8b)
 
@@ -22,7 +22,7 @@ USB Cable
  
  
  
- ### FIGURE-01 RASPI PICO PINOUT DIAGRAM 
+ ### FIGURE-01 RASPI PICO PINOUT DIAGRAM:
 
 
 
@@ -39,8 +39,50 @@ Connect the anode (longer leg) of the LED to GP15 via a 330Ω resistor.
 Connect the cathode (shorter leg) of the LED to GND (ground).
 
 
-## PROGRAM (MicroPython)
+## PROGRAM (MicroPython):
 ```
+## PROGRAM 1:
+from machine import Pin
+from utime import sleep
+led1=Pin(0,Pin.OUT)
+while True:
+    led1.toggle()
+    sleep(0.5)
+
+## PROGRAM 2:
+from machine import Pin
+from utime import sleep
+led1=Pin(0,Pin.OUT)
+led2=Pin(1,Pin.OUT)
+led3=Pin(2,Pin.OUT)
+while True:
+    led1.toggle()
+    sleep(0.5)
+    led2.toggle()
+    sleep(0.5)
+    led3.toggle()
+    sleep(0.5)
+
+## PROGRAM 3:
+from machine import Pin
+from utime import sleep
+led1=Pin(0,Pin.OUT)
+led2=Pin(1,Pin.OUT)
+led3=Pin(2,Pin.OUT)
+buzz=Pin(3,Pin.OUT)
+while True:
+    led1.toggle()
+    sleep(0.5)
+    buzz.toggle()
+    sleep(0.5)
+    led2.toggle()
+    sleep(0.5)
+    buzz.toggle()
+    sleep(0.5)
+    led3.toggle()
+    sleep(0.5)
+    buzz.toggle()
+    sleep(0.5)
 
 
  
@@ -50,16 +92,23 @@ Connect the cathode (shorter leg) of the LED to GND (ground).
  
 ````
 
-### OUPUT  
+### OUTPUT:  
 
 
-# FIGURE -02 ADD TITILE HERE 
+# FIGURE -01 ADD TITILE HERE 
+![Screenshot 2025-02-24 114244](https://github.com/user-attachments/assets/b4a0fba2-ac2d-4f82-b201-da9de71cfc22)
 
-#  FIGURE -03 ADD TITILE HERE 
 
-# FIGURE -04 ADD TITLE HERE 
+#  FIGURE -02 ADD TITILE HERE
+![Screenshot 2025-02-24 113807](https://github.com/user-attachments/assets/2df9ce91-7e24-44bb-aa75-dd514e9259eb)
+
+
+# FIGURE -03 ADD TITLE HERE 
+![Screenshot 2025-02-24 113557](https://github.com/user-attachments/assets/98957983-32e3-49cc-8ec6-29708e08e5ec)
+
+
 
 
  
-## RESULTS
+## RESULTS:
 The LED connected to the Raspberry Pi Pico successfully turns ON and OFF at  user defined time  confirming the proper interfacing of a digital output.
